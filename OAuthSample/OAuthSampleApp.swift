@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import OAuthKit
 
 @main
 struct OAuthSampleApp: App {
+    
+    @Environment(\.oauth)
+    var oauth: OAuth
+
     var body: some Scene {
+
         WindowGroup {
             ContentView()
         }
+        
+        #if !os(tvOS)
+        WindowGroup(id: "oauth") {
+            OAWebView()
+        }
+        #endif
     }
 }

@@ -11,6 +11,9 @@
 		CE1FE0BC2BF66AC400078EB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FE0BB2BF66AC400078EB1 /* ContentView.swift */; };
 		CE1FE0BE2BF66AC500078EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0BD2BF66AC500078EB1 /* Assets.xcassets */; };
 		CE1FE0C22BF66AC500078EB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0C12BF66AC500078EB1 /* Preview Assets.xcassets */; };
+		CE1FE0CA2BF66B6E00078EB1 /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE1FE0C92BF66B6E00078EB1 /* OAuthKit */; };
+		CE1FE0CD2BF6F73000078EB1 /* oauth.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0CC2BF6F73000078EB1 /* oauth.json */; };
+		CEDA2AD62DE91FC200F8E36B /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEDA2AD52DE91FC200F8E36B /* OAuthKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,8 @@
 		CE1FE0BD2BF66AC500078EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1FE0BF2BF66AC500078EB1 /* OAuthSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OAuthSample.entitlements; sourceTree = "<group>"; };
 		CE1FE0C12BF66AC500078EB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE1FE0CB2BF66CC500078EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CE1FE0CC2BF6F73000078EB1 /* oauth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = oauth.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1FE0CA2BF66B6E00078EB1 /* OAuthKit in Frameworks */,
+				CEDA2AD62DE91FC200F8E36B /* OAuthKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +59,7 @@
 		CE1FE0B82BF66AC400078EB1 /* OAuthSample */ = {
 			isa = PBXGroup;
 			children = (
+				CE1FE0CB2BF66CC500078EB1 /* Info.plist */,
 				CE1FE0B92BF66AC400078EB1 /* OAuthSampleApp.swift */,
 				CE1FE0BB2BF66AC400078EB1 /* ContentView.swift */,
 				CE1FE0BD2BF66AC500078EB1 /* Assets.xcassets */,
@@ -64,6 +72,7 @@
 		CE1FE0C02BF66AC500078EB1 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				CE1FE0CC2BF6F73000078EB1 /* oauth.json */,
 				CE1FE0C12BF66AC500078EB1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -85,6 +94,10 @@
 			dependencies = (
 			);
 			name = OAuthSample;
+			packageProductDependencies = (
+				CE1FE0C92BF66B6E00078EB1 /* OAuthKit */,
+				CEDA2AD52DE91FC200F8E36B /* OAuthKit */,
+			);
 			productName = OAuthSample;
 			productReference = CE1FE0B62BF66AC400078EB1 /* OAuthSample.app */;
 			productType = "com.apple.product-type.application";
@@ -97,7 +110,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					CE1FE0B52BF66AC400078EB1 = {
 						CreatedOnToolsVersion = 15.3;
@@ -113,6 +126,9 @@
 				Base,
 			);
 			mainGroup = CE1FE0AD2BF66AC400078EB1;
+			packageReferences = (
+				CEDA2AD42DE91FC200F8E36B /* XCRemoteSwiftPackageReference "OAuthKit" */,
+			);
 			productRefGroup = CE1FE0B72BF66AC400078EB1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +145,7 @@
 			files = (
 				CE1FE0C22BF66AC500078EB1 /* Preview Assets.xcassets in Resources */,
 				CE1FE0BE2BF66AC500078EB1 /* Assets.xcassets in Resources */,
+				CE1FE0CD2BF6F73000078EB1 /* oauth.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +198,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -242,6 +260,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -269,9 +288,11 @@
 				CODE_SIGN_ENTITLEMENTS = OAuthSample/OAuthSample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"OAuthSample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OAuthSample/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -282,18 +303,21 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.codefiesta.OAuthSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+				TVOS_DEPLOYMENT_TARGET = 18.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -305,9 +329,11 @@
 				CODE_SIGN_ENTITLEMENTS = OAuthSample/OAuthSample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"OAuthSample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OAuthSample/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -318,18 +344,21 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.codefiesta.OAuthSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+				TVOS_DEPLOYMENT_TARGET = 18.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -355,6 +384,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEDA2AD42DE91FC200F8E36B /* XCRemoteSwiftPackageReference "OAuthKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/codefiesta/OAuthKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE1FE0C92BF66B6E00078EB1 /* OAuthKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OAuthKit;
+		};
+		CEDA2AD52DE91FC200F8E36B /* OAuthKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEDA2AD42DE91FC200F8E36B /* XCRemoteSwiftPackageReference "OAuthKit" */;
+			productName = OAuthKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE1FE0AE2BF66AC400078EB1 /* Project object */;
 }
