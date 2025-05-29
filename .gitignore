@@ -1,0 +1,5 @@
+.DS_Store
+build
+xcuserdata
+xcshareddata
+Package.resolved
