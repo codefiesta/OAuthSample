@@ -17,8 +17,8 @@ with the [details usually included with bug reports][issue-template].
 
 #### When to report a vulnerability
 
-* You think you have discovered a potential security vulnerability in VimViewer.
-* You are unsure how a vulnerability affects VimViewer.
+* You think you have discovered a potential security vulnerability in OAuthSample.
+* You are unsure how a vulnerability affects OAuthSample.
 
 [issue-template]: https://github.com/codefiesta/OAuthSample/blob/main/.github/ISSUE_TEMPLATE/bug_report.md
   

@@ -5,12 +5,12 @@
 //  Created by Kevin McKee on 5/16/24.
 //
 
-import SwiftUI
 import OAuthKit
+import SwiftUI
 
 @main
 struct OAuthSampleApp: App {
-    
+
     @Environment(\.oauth)
     var oauth: OAuth
 
@@ -19,7 +19,7 @@ struct OAuthSampleApp: App {
         WindowGroup {
             ContentView()
         }
-        
+
         #if !os(tvOS)
         WindowGroup(id: "oauth") {
             OAWebView()

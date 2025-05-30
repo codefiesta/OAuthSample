@@ -28,12 +28,15 @@ jobs:
       run: swiftlint lint --config .swiftlint.yml
     # iOS build (default)
     - name: Build iOS
-      run:  xcodebuild -scheme VimViewer -configuration Debug CODE_SIGNING_ALLOWED=NO -destination "generic/platform=iOS"
+      run:  xcodebuild -scheme OAuthSample -configuration Debug CODE_SIGNING_ALLOWED=NO -destination "generic/platform=iOS"
     # macOS build (if the PR has the label of 'os:macOS' applied)
     - name: Build macOS
       if: ${{ contains(github.event.pull_request.labels.*.name, 'macOS') }}
-      run:  xcodebuild -scheme VimViewer -configuration Debug CODE_SIGNING_ALLOWED=NO -destination "generic/platform=macOS"
+      run:  xcodebuild -scheme OAuthSample -configuration Debug CODE_SIGNING_ALLOWED=NO -destination "generic/platform=macOS"
     # visionOS build (if the PR has the label of 'os:visionOS' applied)
     - name: Build visionOS
       if: ${{ contains(github.event.pull_request.labels.*.name, 'visionOS') }}
-      run:  xcodebuild -scheme VimViewer -configuration Debug CODE_SIGNING_ALLOWED=NO -destination "generic/platform=visionOS"
+      run:  xcodebuild -scheme OAuthSample -configuration Debug CODE_SIGNING_ALLOWED=NO -destination "generic/platform=visionOS"
+    - name: Build tvOS
+      if: ${{ contains(github.event.pull_request.labels.*.name, 'tvOS') }}
+      run:  xcodebuild -scheme OAuthSample -configuration Debug CODE_SIGNING_ALLOWED=NO -destination "generic/platform=tvOS"
