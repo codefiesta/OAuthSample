@@ -9,15 +9,15 @@ import OAuthKit
 import SwiftUI
 
 struct ContentView: View {
-    
+
     #if !os(tvOS)
     @Environment(\.openWindow)
     var openWindow
-    
+
     @Environment(\.dismissWindow)
     private var dismissWindow
     #endif
-    
+
     @Environment(\.oauth)
     var oauth: OAuth
 
@@ -50,7 +50,7 @@ struct ContentView: View {
             handle(state: state)
         }
     }
-    
+
     /// Displays a list of oauth providers.
     var providerList: some View {
         List(oauth.providers) { provider in
@@ -60,23 +60,21 @@ struct ContentView: View {
             }
         }
     }
-    
+
     /// Reacts to oauth state changes by opening or closing authorization windows.
     /// - Parameter state: the published state change
     private func handle(state: OAuth.State) {
         switch state {
         case .empty, .requestingAccessToken, .requestingDeviceCode:
             break
-        case .authorizing, .receivedDeviceCode:
+            case .authorizing, .receivedDeviceCode:
             #if !os(tvOS)
             openWindow(id: "oauth")
             #endif
-            break
-        case .authorized(_):
+            case .authorized:
             #if !os(tvOS)
             dismissWindow(id: "oauth")
         #endif
-            break
         }
     }
 }
