@@ -13,7 +13,8 @@
 		CE1FE0C22BF66AC500078EB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0C12BF66AC500078EB1 /* Preview Assets.xcassets */; };
 		CE1FE0CA2BF66B6E00078EB1 /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE1FE0C92BF66B6E00078EB1 /* OAuthKit */; };
 		CE1FE0CD2BF6F73000078EB1 /* oauth.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0CC2BF6F73000078EB1 /* oauth.json */; };
-		CEDA2AD62DE91FC200F8E36B /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEDA2AD52DE91FC200F8E36B /* OAuthKit */; };
+		CE65D4F52DEB6C4A00A24D2A /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE65D4F42DEB6C4A00A24D2A /* OAuthKit */; };
+		CEC9CBB62DE946EF00F181DF /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEC9CBB52DE946EF00F181DF /* OAuthKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +34,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1FE0CA2BF66B6E00078EB1 /* OAuthKit in Frameworks */,
-				CEDA2AD62DE91FC200F8E36B /* OAuthKit in Frameworks */,
+				CEC9CBB62DE946EF00F181DF /* OAuthKit in Frameworks */,
+				CE65D4F52DEB6C4A00A24D2A /* OAuthKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +98,8 @@
 			name = OAuthSample;
 			packageProductDependencies = (
 				CE1FE0C92BF66B6E00078EB1 /* OAuthKit */,
-				CEDA2AD52DE91FC200F8E36B /* OAuthKit */,
+				CEC9CBB52DE946EF00F181DF /* OAuthKit */,
+				CE65D4F42DEB6C4A00A24D2A /* OAuthKit */,
 			);
 			productName = OAuthSample;
 			productReference = CE1FE0B62BF66AC400078EB1 /* OAuthSample.app */;
@@ -127,7 +130,7 @@
 			);
 			mainGroup = CE1FE0AD2BF66AC400078EB1;
 			packageReferences = (
-				CEDA2AD42DE91FC200F8E36B /* XCRemoteSwiftPackageReference "OAuthKit" */,
+				CE65D4F32DEB6C4A00A24D2A /* XCRemoteSwiftPackageReference "OAuthKit" */,
 			);
 			productRefGroup = CE1FE0B72BF66AC400078EB1 /* Products */;
 			projectDirPath = "";
@@ -386,12 +389,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CEDA2AD42DE91FC200F8E36B /* XCRemoteSwiftPackageReference "OAuthKit" */ = {
+		CE65D4F32DEB6C4A00A24D2A /* XCRemoteSwiftPackageReference "OAuthKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/codefiesta/OAuthKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.6;
+				minimumVersion = 0.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -401,9 +404,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = OAuthKit;
 		};
-		CEDA2AD52DE91FC200F8E36B /* OAuthKit */ = {
+		CE65D4F42DEB6C4A00A24D2A /* OAuthKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEDA2AD42DE91FC200F8E36B /* XCRemoteSwiftPackageReference "OAuthKit" */;
+			package = CE65D4F32DEB6C4A00A24D2A /* XCRemoteSwiftPackageReference "OAuthKit" */;
+			productName = OAuthKit;
+		};
+		CEC9CBB52DE946EF00F181DF /* OAuthKit */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = OAuthKit;
 		};
 /* End XCSwiftPackageProductDependency section */
