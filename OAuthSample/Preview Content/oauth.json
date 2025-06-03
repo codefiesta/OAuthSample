@@ -10,7 +10,8 @@
         "scope": [
             "user",
             "repo"
-        ]
+        ],
+        "debug": true,
     },
     {
         "id": "Google",
@@ -24,7 +25,8 @@
             "email",
             "profile",
             "openid"
-        ]
+        ],
+        "debug": true,
     },
     {
         "id": "Microsoft",
@@ -37,7 +39,8 @@
             "email",
             "profile",
             "openid"
-        ]
+        ],
+        "debug": true,
     },
     {
         "id": "Slack",
@@ -49,7 +52,8 @@
         "customUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Safari/605.1.15",
         "scope": [
             "incoming-webhook"
-        ]
+        ],
+        "debug": true,
     },
     {
         "id": "LinkedIn",
@@ -63,7 +67,8 @@
             "email",
             "profile",
             "openid"
-        ]
+        ],
+        "debug": true,
     }
 
 ]
