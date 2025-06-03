@@ -26,15 +26,23 @@ struct ContentView: View {
             switch oauth.state {
             case .empty:
                 providerList
-            case .authorizing(let provider, _):
-                Text("Authorizing [\(provider.id)]")
+            case .authorizing(let provider, let grantType):
+                Text("Authorizing [\(provider.id)] with [\(grantType.rawValue)]")
             case .requestingAccessToken(let provider):
                 Text("Requesting Access Token [\(provider.id)]")
             case .requestingDeviceCode(let provider):
                 Text("Requesting Device Code [\(provider.id)]")
-            case .authorized(let auth):
-                Button("Authorized [\(auth.issuer)]") {
-                    oauth.clear()
+            case .authorized(let provider, _):
+                HStack {
+                    Button("Authorized [\(provider.id)]") {
+                        oauth.clear()
+                    }
+                    Button {
+                        oauth.authorize(provider: provider, grantType: .refreshToken)
+                    } label: {
+                        Image(systemName: "arrow.clockwise")
+                    }
+
                 }
             case .receivedDeviceCode(_, let deviceCode):
                 Text("To login, visit")
@@ -56,7 +64,8 @@ struct ContentView: View {
         List(oauth.providers) { provider in
             Button(provider.id) {
                 // Start the authorization flow (use .deviceCode for tvOS)
-                oauth.authorize(provider: provider, grantType: .authorizationCode)
+                let grantType: OAuth.GrantType = .pkce(.init())
+                oauth.authorize(provider: provider, grantType: grantType)
             }
         }
     }
@@ -67,16 +76,32 @@ struct ContentView: View {
         switch state {
         case .empty, .requestingAccessToken, .requestingDeviceCode:
             break
-            case .authorizing, .receivedDeviceCode:
-            #if !os(tvOS)
-            openWindow(id: "oauth")
-            #endif
-            case .authorized:
-            #if !os(tvOS)
-            dismissWindow(id: "oauth")
-        #endif
+        case .authorizing(_, let grantType):
+            switch grantType {
+            case .authorizationCode, .pkce, .deviceCode:
+                openWebView()
+            case .clientCredentials, .refreshToken:
+                break
+            }
+        case .receivedDeviceCode:
+            openWebView()
+        case .authorized:
+            dismissWebView()
         }
     }
+    
+    private func openWebView() {
+        #if !os(tvOS)
+        openWindow(id: "oauth")
+        #endif
+    }
+
+    private func dismissWebView() {
+        #if !os(tvOS)
+        dismissWindow(id: "oauth")
+        #endif
+    }
+    
 }
 
 #Preview {
