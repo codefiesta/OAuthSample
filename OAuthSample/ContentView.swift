@@ -85,7 +85,7 @@ struct ContentView: View {
             }
         case .receivedDeviceCode:
             openWebView()
-        case .authorized:
+        case .authorized(_, _):
             dismissWebView()
         }
     }
