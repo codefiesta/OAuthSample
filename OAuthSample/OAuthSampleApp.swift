@@ -22,7 +22,7 @@ struct OAuthSampleApp: App {
 
         #if !os(tvOS)
         WindowGroup(id: "oauth") {
-            OAWebView()
+            OAWebView(oauth: oauth)
         }
         #endif
     }
