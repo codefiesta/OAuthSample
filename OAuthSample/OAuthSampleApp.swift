@@ -23,6 +23,7 @@ struct OAuthSampleApp: App {
         #if !os(tvOS)
         WindowGroup(id: "oauth") {
             OAWebView()
+                .environment(\.oauth, oauth)
         }
         #endif
     }
