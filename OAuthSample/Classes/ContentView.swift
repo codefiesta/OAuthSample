@@ -92,13 +92,13 @@ struct ContentView: View {
 
     private func openWebView() {
         #if !os(tvOS)
-        openWindow(id: "oauth")
+        openWindow(id: .oauth)
         #endif
     }
 
     private func dismissWebView() {
         #if !os(tvOS)
-        dismissWindow(id: "oauth")
+        dismissWindow(id: .oauth)
         #endif
     }
 
