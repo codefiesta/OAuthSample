@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-indigo.svg)](https://opensource.org/licenses/MIT)
 
 # OAuthKit Sample
-Sample Swift Application for using the [OAuthKit](https://github.com/codefiesta/OAuthKit) Library.
+Sample Swift Application for using the [OAuthKit](https://github.com/codefiesta/OAuthKit) Library. This sample application demonstrates how to get up and running quickly with [OAuthKit](https://github.com/codefiesta/OAuthKit) and supports iOS, macOS, tvOS, and visionOS. 
 
 ![Vision_Pro_Screenshot](https://github.com/user-attachments/assets/692da254-e4db-4d65-a26f-1d2212975504)
 
