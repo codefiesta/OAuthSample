@@ -64,17 +64,25 @@ struct ContentView: View {
     var providerList: some View {
         List(oauth.providers) { provider in
             Button(provider.id) {
-                // Start the authorization flow (use .deviceCode for tvOS)
-                #if canImport(WebKit)
-                let grantType: OAuth.GrantType = .pkce(.init())
-                #else
-                let grantType: OAuth.GrantType = .deviceCode
-                #endif
-                oauth.authorize(provider: provider, grantType: grantType)
+                authorize(provider: provider)
             }
         }
     }
-
+    
+    /// Starts the authorization process for the specified provider.
+    /// - Parameter provider: the provider to begin authorization for
+    private func authorize(provider: OAuth.Provider) {
+        #if canImport(WebKit)
+        // Use the PKCE grantType for iOS, macOS, visionOS
+        let grantType: OAuth.GrantType = .pkce(.init())
+        #else
+        // Use the Device Code grantType for tvOS, watchOS
+        let grantType: OAuth.GrantType = .deviceCode
+        #endif
+        // Start the authorization flow
+        oauth.authorize(provider: provider, grantType: grantType)
+    }
+    
     /// Reacts to oauth state changes by opening or closing authorization windows.
     /// - Parameter state: the published state change
     private func handle(state: OAuth.State) {
