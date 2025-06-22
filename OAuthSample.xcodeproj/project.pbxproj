@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,36 @@
 		CE1FE0CA2BF66B6E00078EB1 /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE1FE0C92BF66B6E00078EB1 /* OAuthKit */; };
 		CE1FE0CD2BF6F73000078EB1 /* oauth.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0CC2BF6F73000078EB1 /* oauth.json */; };
 		CE38E0ED2E0719EB0065319C /* OAuth+Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38E0EC2E0719EB0065319C /* OAuth+Window.swift */; };
+		CE4317502E08AF77009B3DF1 /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE43174F2E08AF77009B3DF1 /* OAuthKit */; };
+		CE4317512E08B0BB009B3DF1 /* oauth.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0CC2BF6F73000078EB1 /* oauth.json */; };
 		CE65D4F52DEB6C4A00A24D2A /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE65D4F42DEB6C4A00A24D2A /* OAuthKit */; };
 		CEC9CBB62DE946EF00F181DF /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEC9CBB52DE946EF00F181DF /* OAuthKit */; };
+		CEF889822E08ACFF0083845F /* OAuthSampleWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEF889782E08ACFD0083845F /* OAuthSampleWatch.app */; platformFilters = (ios, xros, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEF889802E08ACFF0083845F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE1FE0AE2BF66AC400078EB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEF889772E08ACFD0083845F;
+			remoteInfo = "OAuthSampleWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEF889862E08ACFF0083845F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CEF889822E08ACFF0083845F /* OAuthSampleWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE1FE0B62BF66AC400078EB1 /* OAuthSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OAuthSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,7 +55,12 @@
 		CE1FE0CB2BF66CC500078EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE1FE0CC2BF6F73000078EB1 /* oauth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = oauth.json; sourceTree = "<group>"; };
 		CE38E0EC2E0719EB0065319C /* OAuth+Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAuth+Window.swift"; sourceTree = "<group>"; };
+		CEF889782E08ACFD0083845F /* OAuthSampleWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OAuthSampleWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CEF889792E08ACFD0083845F /* OAuthSampleWatch */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OAuthSampleWatch; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CE1FE0B32BF66AC400078EB1 /* Frameworks */ = {
@@ -41,6 +73,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEF889752E08ACFD0083845F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE4317502E08AF77009B3DF1 /* OAuthKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -48,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				CE1FE0B82BF66AC400078EB1 /* OAuthSample */,
+				CEF889792E08ACFD0083845F /* OAuthSampleWatch */,
+				CE43174E2E08AF77009B3DF1 /* Frameworks */,
 				CE1FE0B72BF66AC400078EB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1FE0B62BF66AC400078EB1 /* OAuthSample.app */,
+				CEF889782E08ACFD0083845F /* OAuthSampleWatch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +142,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CE43174E2E08AF77009B3DF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,10 +159,12 @@
 				CE1FE0B22BF66AC400078EB1 /* Sources */,
 				CE1FE0B32BF66AC400078EB1 /* Frameworks */,
 				CE1FE0B42BF66AC400078EB1 /* Resources */,
+				CEF889862E08ACFF0083845F /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CEF889812E08ACFF0083845F /* PBXTargetDependency */,
 			);
 			name = OAuthSample;
 			packageProductDependencies = (
@@ -124,6 +176,29 @@
 			productReference = CE1FE0B62BF66AC400078EB1 /* OAuthSample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CEF889772E08ACFD0083845F /* OAuthSampleWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF889832E08ACFF0083845F /* Build configuration list for PBXNativeTarget "OAuthSampleWatch" */;
+			buildPhases = (
+				CEF889742E08ACFD0083845F /* Sources */,
+				CEF889752E08ACFD0083845F /* Frameworks */,
+				CEF889762E08ACFD0083845F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CEF889792E08ACFD0083845F /* OAuthSampleWatch */,
+			);
+			name = OAuthSampleWatch;
+			packageProductDependencies = (
+				CE43174F2E08AF77009B3DF1 /* OAuthKit */,
+			);
+			productName = "OAuthSampleWatch Watch App";
+			productReference = CEF889782E08ACFD0083845F /* OAuthSampleWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -131,11 +206,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					CE1FE0B52BF66AC400078EB1 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					CEF889772E08ACFD0083845F = {
+						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
@@ -156,6 +234,7 @@
 			projectRoot = "";
 			targets = (
 				CE1FE0B52BF66AC400078EB1 /* OAuthSample */,
+				CEF889772E08ACFD0083845F /* OAuthSampleWatch */,
 			);
 		};
 /* End PBXProject section */
@@ -168,6 +247,14 @@
 				CE1FE0C22BF66AC500078EB1 /* Preview Assets.xcassets in Resources */,
 				CE1FE0BE2BF66AC500078EB1 /* Assets.xcassets in Resources */,
 				CE1FE0CD2BF6F73000078EB1 /* oauth.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF889762E08ACFD0083845F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE4317512E08B0BB009B3DF1 /* oauth.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +271,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEF889742E08ACFD0083845F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEF889812E08ACFF0083845F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				xros,
+			);
+			target = CEF889772E08ACFD0083845F /* OAuthSampleWatch */;
+			targetProxy = CEF889802E08ACFF0083845F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CE1FE0C32BF66AC500078EB1 /* Debug */ = {
@@ -385,6 +491,63 @@
 			};
 			name = Release;
 		};
+		CEF889842E08ACFF0083845F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OAuthSampleWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.codefiesta.OAuthSample;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codefiesta.OAuthSample.Watch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Debug;
+		};
+		CEF889852E08ACFF0083845F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = OAuthSampleWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.codefiesta.OAuthSample;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codefiesta.OAuthSample.Watch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -406,6 +569,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		CEF889832E08ACFF0083845F /* Build configuration list for PBXNativeTarget "OAuthSampleWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF889842E08ACFF0083845F /* Debug */,
+				CEF889852E08ACFF0083845F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -422,6 +594,11 @@
 /* Begin XCSwiftPackageProductDependency section */
 		CE1FE0C92BF66B6E00078EB1 /* OAuthKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = OAuthKit;
+		};
+		CE43174F2E08AF77009B3DF1 /* OAuthKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE65D4F32DEB6C4A00A24D2A /* XCRemoteSwiftPackageReference "OAuthKit" */;
 			productName = OAuthKit;
 		};
 		CE65D4F42DEB6C4A00A24D2A /* OAuthKit */ = {
