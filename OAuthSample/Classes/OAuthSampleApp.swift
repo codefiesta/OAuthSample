@@ -20,7 +20,7 @@ struct OAuthSampleApp: App {
             ContentView()
         }
 
-        #if !os(tvOS)
+        #if canImport(WebKit)
         WindowGroup(id: .oauth) {
             OAWebView(oauth: oauth)
         }

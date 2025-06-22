@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    #if !os(tvOS)
+    #if canImport(WebKit)
     @Environment(\.openWindow)
     var openWindow
 
@@ -46,7 +46,8 @@ struct ContentView: View {
                 }
             case .receivedDeviceCode(_, let deviceCode):
                 Text("To login, visit")
-                Text(deviceCode.verificationUri).foregroundStyle(.blue)
+                Text(.init("[\(deviceCode.verificationUri)](\(deviceCode.verificationUri))"))
+                    .foregroundStyle(.blue)
                 Text("and enter the following code:")
                 Text(deviceCode.userCode)
                     .padding()
@@ -64,7 +65,11 @@ struct ContentView: View {
         List(oauth.providers) { provider in
             Button(provider.id) {
                 // Start the authorization flow (use .deviceCode for tvOS)
+                #if canImport(WebKit)
                 let grantType: OAuth.GrantType = .pkce(.init())
+                #else
+                let grantType: OAuth.GrantType = .deviceCode
+                #endif
                 oauth.authorize(provider: provider, grantType: grantType)
             }
         }
@@ -91,13 +96,13 @@ struct ContentView: View {
     }
 
     private func openWebView() {
-        #if !os(tvOS)
+        #if canImport(WebKit)
         openWindow(id: .oauth)
         #endif
     }
 
     private func dismissWebView() {
-        #if !os(tvOS)
+        #if canImport(WebKit)
         dismissWindow(id: .oauth)
         #endif
     }
