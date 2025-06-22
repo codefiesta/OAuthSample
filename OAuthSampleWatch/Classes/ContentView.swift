@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  OAuthSample
+//  OAuthSampleWatch
 //
-//  Created by Kevin McKee on 5/16/24.
+//  Created by Kevin McKee
 //
 
 import OAuthKit
@@ -10,18 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
 
-    #if canImport(WebKit)
-    @Environment(\.openWindow)
-    var openWindow
-
-    @Environment(\.dismissWindow)
-    private var dismissWindow
-    #endif
-
     @Environment(\.oauth)
     var oauth: OAuth
 
     var body: some View {
+
         VStack(spacing: 8) {
             switch oauth.state {
             case .empty:
@@ -56,65 +49,19 @@ struct ContentView: View {
             }
         }
         .onChange(of: oauth.state) { _, state in
-            handle(state: state)
+            debugPrint("✅", state)
         }
+        .padding()
     }
 
     /// Displays a list of oauth providers.
     var providerList: some View {
         List(oauth.providers) { provider in
             Button(provider.id) {
-                authorize(provider: provider)
+                // Start authorization (See companion iOS app for details)
             }
         }
     }
-
-    /// Starts the authorization process for the specified provider.
-    /// - Parameter provider: the provider to begin authorization for
-    private func authorize(provider: OAuth.Provider) {
-        #if canImport(WebKit)
-        // Use the PKCE grantType for iOS, macOS, visionOS
-        let grantType: OAuth.GrantType = .pkce(.init())
-        #else
-        // Use the Device Code grantType for tvOS, watchOS
-        let grantType: OAuth.GrantType = .deviceCode
-        #endif
-        // Start the authorization flow
-        oauth.authorize(provider: provider, grantType: grantType)
-    }
-
-    /// Reacts to oauth state changes by opening or closing authorization windows.
-    /// - Parameter state: the published state change
-    private func handle(state: OAuth.State) {
-        switch state {
-        case .empty, .requestingAccessToken, .requestingDeviceCode:
-            break
-        case .authorizing(_, let grantType):
-            switch grantType {
-            case .authorizationCode, .pkce, .deviceCode:
-                openWebView()
-            case .clientCredentials, .refreshToken:
-                break
-            }
-        case .receivedDeviceCode:
-            openWebView()
-        case .authorized(_, _):
-            dismissWebView()
-        }
-    }
-
-    private func openWebView() {
-        #if canImport(WebKit)
-        openWindow(id: .oauth)
-        #endif
-    }
-
-    private func dismissWebView() {
-        #if canImport(WebKit)
-        dismissWindow(id: .oauth)
-        #endif
-    }
-
 }
 
 #Preview {
