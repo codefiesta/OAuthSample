@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-    #if !os(tvOS)
+    #if canImport(WebKit)
     @Environment(\.openWindow)
     var openWindow
 
@@ -46,7 +46,8 @@ struct ContentView: View {
                 }
             case .receivedDeviceCode(_, let deviceCode):
                 Text("To login, visit")
-                Text(deviceCode.verificationUri).foregroundStyle(.blue)
+                Text(.init("[\(deviceCode.verificationUri)](\(deviceCode.verificationUri))"))
+                    .foregroundStyle(.blue)
                 Text("and enter the following code:")
                 Text(deviceCode.userCode)
                     .padding()
@@ -63,13 +64,25 @@ struct ContentView: View {
     var providerList: some View {
         List(oauth.providers) { provider in
             Button(provider.id) {
-                // Start the authorization flow (use .deviceCode for tvOS)
-                let grantType: OAuth.GrantType = .pkce(.init())
-                oauth.authorize(provider: provider, grantType: grantType)
+                authorize(provider: provider)
             }
         }
     }
-
+    
+    /// Starts the authorization process for the specified provider.
+    /// - Parameter provider: the provider to begin authorization for
+    private func authorize(provider: OAuth.Provider) {
+        #if canImport(WebKit)
+        // Use the PKCE grantType for iOS, macOS, visionOS
+        let grantType: OAuth.GrantType = .pkce(.init())
+        #else
+        // Use the Device Code grantType for tvOS, watchOS
+        let grantType: OAuth.GrantType = .deviceCode
+        #endif
+        // Start the authorization flow
+        oauth.authorize(provider: provider, grantType: grantType)
+    }
+    
     /// Reacts to oauth state changes by opening or closing authorization windows.
     /// - Parameter state: the published state change
     private func handle(state: OAuth.State) {
@@ -91,13 +104,13 @@ struct ContentView: View {
     }
 
     private func openWebView() {
-        #if !os(tvOS)
+        #if canImport(WebKit)
         openWindow(id: .oauth)
         #endif
     }
 
     private func dismissWebView() {
-        #if !os(tvOS)
+        #if canImport(WebKit)
         dismissWindow(id: .oauth)
         #endif
     }

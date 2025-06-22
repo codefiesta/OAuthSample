@@ -8,6 +8,8 @@
 import OAuthKit
 import SwiftUI
 
+#if canImport(WebKit)
+
 extension OAuth {
 
     /// Provides a convenience enum that identifies application scene windows that can be opened or dismissed.
@@ -47,3 +49,5 @@ public extension DismissWindowAction {
         callAsFunction(id: id.rawValue)
     }
 }
+
+#endif
