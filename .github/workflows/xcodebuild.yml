@@ -40,3 +40,6 @@ jobs:
     - name: Build tvOS
       if: ${{ contains(github.event.pull_request.labels.*.name, 'tvOS') }}
       run:  xcodebuild -scheme OAuthSample -configuration Debug CODE_SIGNING_ALLOWED=NO -destination "generic/platform=tvOS"
+    - name: Build watchOS
+      if: ${{ contains(github.event.pull_request.labels.*.name, 'watchOS') }}
+      run:  xcodebuild -scheme OAuthSample -configuration Debug CODE_SIGNING_ALLOWED=NO -destination "generic/platform=watchOS"
