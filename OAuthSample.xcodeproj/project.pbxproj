@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -61,10 +61,6 @@
 		CEF889782E08ACFD0083845F /* OAuthSampleWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OAuthSampleWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		CEF889792E08ACFD0083845F /* OAuthSampleWatch */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OAuthSampleWatch; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
 		CE1FE0B32BF66AC400078EB1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -91,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				CE1FE0B82BF66AC400078EB1 /* OAuthSample */,
-				CEF889792E08ACFD0083845F /* OAuthSampleWatch */,
 				CE43174E2E08AF77009B3DF1 /* Frameworks */,
 				CE1FE0B72BF66AC400078EB1 /* Products */,
 			);
@@ -190,9 +185,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				CEF889792E08ACFD0083845F /* OAuthSampleWatch */,
 			);
 			name = OAuthSampleWatch;
 			packageProductDependencies = (
