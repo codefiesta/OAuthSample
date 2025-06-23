@@ -17,6 +17,8 @@
 		CE4317502E08AF77009B3DF1 /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE43174F2E08AF77009B3DF1 /* OAuthKit */; };
 		CE4317512E08B0BB009B3DF1 /* oauth.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0CC2BF6F73000078EB1 /* oauth.json */; };
 		CE43175A2E09A27D009B3DF1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FE0BB2BF66AC400078EB1 /* ContentView.swift */; };
+		CE43175B2E09A2E5009B3DF1 /* OAuthSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FE0B92BF66AC400078EB1 /* OAuthSampleApp.swift */; };
+		CE43175C2E09A321009B3DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0BD2BF66AC500078EB1 /* Assets.xcassets */; };
 		CE65D4F52DEB6C4A00A24D2A /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE65D4F42DEB6C4A00A24D2A /* OAuthKit */; };
 		CEC9CBB62DE946EF00F181DF /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEC9CBB52DE946EF00F181DF /* OAuthKit */; };
 		CEF889822E08ACFF0083845F /* OAuthSampleWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEF889782E08ACFD0083845F /* OAuthSampleWatch.app */; platformFilters = (ios, xros, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -255,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE43175C2E09A321009B3DF1 /* Assets.xcassets in Resources */,
 				CE4317512E08B0BB009B3DF1 /* oauth.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE43175A2E09A27D009B3DF1 /* ContentView.swift in Sources */,
+				CE43175B2E09A2E5009B3DF1 /* OAuthSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
