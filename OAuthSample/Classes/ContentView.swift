@@ -10,6 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
 
+    @Environment(\.oauth)
+    var oauth: OAuth
+
     #if canImport(WebKit)
     @Environment(\.openWindow)
     var openWindow
@@ -17,9 +20,6 @@ struct ContentView: View {
     @Environment(\.dismissWindow)
     private var dismissWindow
     #endif
-
-    @Environment(\.oauth)
-    var oauth: OAuth
 
     var body: some View {
         VStack(spacing: 8) {
