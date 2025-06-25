@@ -21,7 +21,7 @@
 		CE43175C2E09A321009B3DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1FE0BD2BF66AC500078EB1 /* Assets.xcassets */; };
 		CE65D4F52DEB6C4A00A24D2A /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE65D4F42DEB6C4A00A24D2A /* OAuthKit */; };
 		CEC9CBB62DE946EF00F181DF /* OAuthKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEC9CBB52DE946EF00F181DF /* OAuthKit */; };
-		CEF889822E08ACFF0083845F /* OAuthSampleWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEF889782E08ACFD0083845F /* OAuthSampleWatch.app */; platformFilters = (ios, xros, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEF889822E08ACFF0083845F /* OAuthSampleWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEF889782E08ACFD0083845F /* OAuthSampleWatch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -281,10 +281,7 @@
 /* Begin PBXTargetDependency section */
 		CEF889812E08ACFF0083845F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilters = (
-				ios,
-				xros,
-			);
+			platformFilter = ios;
 			target = CEF889772E08ACFD0083845F /* OAuthSampleWatch */;
 			targetProxy = CEF889802E08ACFF0083845F /* PBXContainerItemProxy */;
 		};
