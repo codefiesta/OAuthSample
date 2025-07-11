@@ -1,9 +1,9 @@
 [
     {
         "id": "Auth0",
-        "authorizationURL": "https://dev-w73yi8ptiaps72cm.us.auth0.com/authorize",
-        "accessTokenURL": "https://dev-w73yi8ptiaps72cm.us.auth0.com/oauth/token",
-        "deviceCodeURL": "https://dev-w73yi8ptiaps72cm.us.auth0.com/oauth/device/code",
+        "authorizationURL": "https://domain.us.auth0.com/authorize",
+        "accessTokenURL": "https://domain.us.auth0.com/oauth/token",
+        "deviceCodeURL": "https://domain.us.auth0.com/oauth/device/code",
         "clientID": "CLIENT_ID",
         "clientSecret": "CLIENT_SECRET",
         "redirectURI": "https://github.com/codefiesta/",
