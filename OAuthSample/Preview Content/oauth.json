@@ -1,5 +1,48 @@
 [
     {
+        "id": "Auth0",
+        "authorizationURL": "https://dev-w73yi8ptiaps72cm.us.auth0.com/authorize",
+        "accessTokenURL": "https://dev-w73yi8ptiaps72cm.us.auth0.com/oauth/token",
+        "deviceCodeURL": "https://dev-w73yi8ptiaps72cm.us.auth0.com/oauth/device/code",
+        "clientID": "CLIENT_ID",
+        "clientSecret": "CLIENT_SECRET",
+        "redirectURI": "https://github.com/codefiesta/",
+        "scope": [
+            "email",
+            "profile",
+            "openid"
+        ],
+        "debug": true,
+    },
+    {
+        "id": "Box",
+        "authorizationURL": "https://account.box.com/api/oauth2/authorize",
+        "accessTokenURL": "https://api.box.com/oauth2/token",
+        "clientID": "CLIENT_ID",
+        "clientSecret": "CLIENT_SECRET",
+        "redirectURI": "https://github.com/codefiesta/",
+        "scope": [
+            "root_readwrite"
+        ],
+        "debug": true,
+    },
+    {
+        "id": "Dropbox",
+        "authorizationURL": "https://www.dropbox.com/oauth2/authorize",
+        "accessTokenURL": "https://api.dropboxapi.com/oauth2/token",
+        "clientID": "CLIENT_ID",
+        "clientSecret": "CLIENT_SECRET",
+        "redirectURI": "https://github.com/codefiesta/",
+        "scope": [
+            "email",
+            "profile",
+            "openid",
+            "files.metadata.write",
+            "files.content.write",
+        ],
+        "debug": true,
+    },
+    {
         "id": "GitHub",
         "authorizationURL": "https://github.com/login/oauth/authorize",
         "accessTokenURL": "https://github.com/login/oauth/access_token",
@@ -56,6 +99,22 @@
         "debug": true,
     },
     {
+        "id": "Stripe",
+        "authorizationURL": "https://marketplace.stripe.com/oauth/v2/authorize",
+        "accessTokenURL": "https://api.stripe.com/v1/oauth/token",
+        "clientID": "CLIENT_ID",
+        "clientSecret": "CLIENT_SECRET",
+        "redirectURI": "https://dashboard.stripe.com/test/apps-oauth/com.example.code-fiesta",
+        "scope": [
+            "connected_account_read",
+            "balance_read",
+            "charge_read",
+            "customer_read",
+            "order_read"
+        ],
+        "debug": true
+    },
+    {
         "id": "LinkedIn",
         "authorizationURL": "https://www.linkedin.com/oauth/v2/authorization",
         "accessTokenURL": "https://www.linkedin.com/oauth/v2/accessToken",
@@ -70,5 +129,4 @@
         ],
         "debug": true,
     }
-
 ]
