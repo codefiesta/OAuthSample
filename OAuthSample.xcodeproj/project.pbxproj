@@ -581,7 +581,7 @@
 			repositoryURL = "https://github.com/codefiesta/OAuthKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.5;
+				minimumVersion = 1.4.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
