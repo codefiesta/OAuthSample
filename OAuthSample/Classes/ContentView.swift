@@ -100,7 +100,7 @@ struct ContentView: View {
             openWebView()
         case .authorized(_, let authorization):
             dismissWebView()
-            makeAuthenticatedRequest(authorization)
+            makeAuthorizedRequest(authorization)
         }
     }
 
@@ -116,9 +116,9 @@ struct ContentView: View {
         #endif
     }
 
-    /// Sample of making an authenticated request against Github.
+    /// Sample of making an authorized request against Github.
     /// - Parameter authorization: the authorization to use
-    private func makeAuthenticatedRequest(_ authorization: OAuth.Authorization) {
+    private func makeAuthorizedRequest(_ authorization: OAuth.Authorization) {
         Task {
             let urlSession: URLSession = .init(configuration: .ephemeral)
             let url: URL = .init(string: "https://api.github.com/users/codefiesta/repos")!
