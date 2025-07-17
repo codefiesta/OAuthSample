@@ -53,6 +53,8 @@ struct ContentView: View {
                     .padding()
                     .border(Color.primary)
                     .font(.title)
+            case .error(let provider, let error):
+                Text("Error [\(provider.id)]: \(error.localizedDescription)")
             }
         }
         .onChange(of: oauth.state) { _, state in
@@ -87,7 +89,7 @@ struct ContentView: View {
     /// - Parameter state: the published state change
     private func handle(state: OAuth.State) {
         switch state {
-        case .empty, .requestingAccessToken, .requestingDeviceCode:
+        case .empty, .error, .requestingAccessToken, .requestingDeviceCode:
             break
         case .authorizing(_, let grantType):
             switch grantType {
