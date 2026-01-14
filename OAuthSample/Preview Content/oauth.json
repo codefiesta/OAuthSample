@@ -128,5 +128,17 @@
             "openid"
         ],
         "debug": true,
+    },
+    {
+        "id": "Itch.io",
+        "authorizationURL": "https://itch.io/user/oauth",
+        "accessTokenURL": "https://api.itch.io/oauth/token",
+        "clientID": "CLIENT_ID",
+        "clientSecret": "CLIENT_SECRET",
+        "redirectURI": "oauthkit://callback",
+        "scope": [
+            "profile"
+        ],
+        "debug": true,
     }
 ]
